@@ -167,7 +167,7 @@ public class BuildCacheServiceProvider {
     }
 
     private static void logConfig(Path buildIdentityPath, String role, BuildCacheDescription description) {
-        if (LOGGER.isLifecycleEnabled()) {
+        if (LOGGER.isInfoEnabled()) {
             StringBuilder config = new StringBuilder();
             boolean pullOnly = !description.isPush();
             if (!description.config.isEmpty() || pullOnly) {
@@ -201,7 +201,7 @@ public class BuildCacheServiceProvider {
                 buildDescription = "build '" + buildIdentityPath + "'";
             }
 
-            LOGGER.lifecycle("Using {} {} build cache for {}{}.",
+            LOGGER.info("Using {} {} build cache for {}{}.",
                 role,
                 description.type == null ? description.className : description.type,
                 buildDescription,
